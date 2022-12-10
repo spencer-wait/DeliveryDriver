@@ -6,6 +6,7 @@ public class Delivery : MonoBehaviour
 
 {
     bool hasPackage;
+    [SerializeField] GameObject packageInCar;
     [SerializeField] Color32 hasPackageColor = new Color32();
     [SerializeField] Color32 noPackageColor = new Color32();
     SpriteRenderer spriteRenderer;
@@ -13,6 +14,7 @@ public class Delivery : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        packageInCar.gameObject.SetActive(false);   // make package in car not appear to begin with
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -26,8 +28,9 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log("Picked up the package!");
             hasPackage = true;
+            packageInCar.gameObject.SetActive(true);    // make package in car visible
             Destroy(other.gameObject);
-            spriteRenderer.color = hasPackageColor;
+            // spriteRenderer.color = hasPackageColor;
         }
         else if (other.tag == "Package" && hasPackage)
         {
@@ -41,8 +44,9 @@ public class Delivery : MonoBehaviour
         else if (other.tag == "Customer" && hasPackage)
         {
             Debug.Log("You delivered the package successfully!");
+            packageInCar.gameObject.SetActive(false);    // make package in car disappear
             hasPackage = false;
-            spriteRenderer.color = noPackageColor;
+            // spriteRenderer.color = noPackageColor;
         }
         
     }
