@@ -10,7 +10,7 @@ public class LayerOrderNotes : MonoBehaviour
     /******************************************************
      * -15 -- RiverWater
      * -13 -- ParkingEntrance
-     * -12 -- ParkingLotBase
+     * -12 -- ParkingLotBase; Lake
      * -11 -- ParkingLotLines
      * -10 -- Roads
      *  -2 -- SoccerFieldGrass
@@ -22,8 +22,9 @@ public class LayerOrderNotes : MonoBehaviour
      *   5 -- PackageBody; CustomerDropoff
      *   6 -- PackageLines; CustomerDropoffInnerCircle
      *  10 -- PlayerCar
-     *  11 -- CarsInWorld
-     *  12 -- Houses; Lake
+     *  11 -- CarsInWorld; PackageInCar
+     *  12 -- PackageInCarLines
+     *  13 -- Houses
      *  15 -- Treees; SoccerGoals
      *  20 -- ExteriorWalls
      ******************************************************/
